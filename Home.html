@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bro Chai</title>
+  <link rel="icon" href="images/Brochai.jpg" type="image">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #F5F5F5;
+      color: #313131;
+    }
+    header {
+      background: #C67C4E;
+      color: #E3E3E3;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #E3E3E3;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 6px 18px;
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+      background: rgba(49,49,49,0.08);
+      backdrop-filter: blur(2px);
+    }
+    nav a:hover, nav a.active {
+      background: #313131;
+      color: #EDD6C8;
+    }
+    .hero {
+      max-width: 600px;
+      padding: 40px;
+      margin: 40px 0 40px 40px;
+      background: #E3E3E3;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(49,49,49,0.08);
+      display: inline-block;
+      vertical-align: top;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s cubic-bezier(.42,0,.58,1) 0.2s forwards;
+    }
+    .hero h2 {
+      color: #C67C4E;
+      margin-top: 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: #C67C4E;
+      color: #E3E3E3;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #313131;
+      color: #EDD6C8;
+    }
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s cubic-bezier(.42,0,.58,1) forwards;
+    }
+    .main-content img {
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(49,49,49,0.08);
+      margin-right: 40px;
+      opacity: 0;
+      transform: scale(0.95) translateY(40px);
+      animation: imageFadeIn 1.2s cubic-bezier(.42,0,.58,1) 0.5s forwards;
+    }
+    footer {
+      background: #313131;
+      color: #E3E3E3;
+      text-align: center;
+      padding: 16px 0;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+      .main-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .main-content img {
+        margin: 50px 0 20px 0;
+        width: 90vw;
+        height: auto;
+      }
+      .hero {
+        margin: 40px 0 0 0;
+        width: 90vw;
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes imageFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95) translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>☕ Bro Chai 🍵</h1>
+    <nav>
+      <a href="Home.html" class="active">Home</a>
+      <a href="Menu.html">Menu</a>
+      <a href="order.html">Order</a>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <section class="hero">
+      <h2>Welcome to Your Daily Dose of Happiness</h2>
+      <p>Freshly brewed tea & coffee delivered to your doorstep.</p>
+      <a href="Menu.html" class="btn">Explore Menu</a>
+    </section>
+    <img src="images/coffeewomen.jpg" alt="Coffee Image" width="280" height="250">
+  </div>
+
+  <footer>
+    <p>© 2025 Bro Chai Hub | Made with ❤️</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brochai</title>
+  <link rel="icon" href="images/Brochai.jpg" type="image">
+  <style>
+    body {
+      background: linear-gradient(135deg, #EDD6C8 0%, #C67C4E 100%);
+      color: #313131;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(198,124,78,0.95);
+      color: #E3E3E3;
+      padding: 32px 0 16px 0;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(49,49,49,0.12);
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px #C67C4E55;
+    }
+    nav {
+      margin-top: 8px;
+    }
+    nav a {
+      color: #E3E3E3;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 6px 18px;
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+      background: rgba(49,49,49,0.08);
+      backdrop-filter: blur(2px);
+    }
+    nav a:hover, nav a.active {
+      background: #313131;
+      color: #EDD6C8;
+    }
+    .order {
+      background: rgba(227,227,227,0.95);
+      margin: 40px auto;
+      padding: 40px 32px 32px 32px;
+      border-radius: 24px;
+      max-width: 520px;
+      box-shadow: 0 8px 32px rgba(49,49,49,0.18);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #C67C4E;
+      animation: fadeInUp 0.8s cubic-bezier(.42,0,.58,1);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .order h2 {
+      color: #C67C4E;
+      margin-bottom: 28px;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+      text-shadow: 0 2px 8px #C67C4E22;
+    }
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 7px;
+      color: #313131;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    input[type="text"], input[type="number"], textarea, select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #C67C4E;
+      border-radius: 8px;
+      background: #EDD6C8;
+      color: #313131;
+      margin-bottom: 14px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      transition: border 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px #C67C4E11;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #313131;
+      outline: none;
+      box-shadow: 0 0 0 2px #C67C4E44;
+    }
+    .btn, .add-item {
+      background: linear-gradient(90deg, #C67C4E 60%, #EDD6C8 100%);
+      color: #313131;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 18px;
+      box-shadow: 0 2px 8px #C67C4E22;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .btn:hover, .add-item:hover {
+      background: linear-gradient(90deg, #313131 60%, #C67C4E 100%);
+      color: #EDD6C8;
+      box-shadow: 0 4px 16px #31313133;
+    }
+    .item-group {
+      border: 1.5px solid #C67C4E;
+      padding: 18px 18px 10px 18px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      background: linear-gradient(90deg, #EDD6C8 80%, #E3E3E3 100%);
+      box-shadow: 0 2px 8px #C67C4E11;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .item-group:hover {
+      box-shadow: 0 4px 16px #C67C4E22;
+    }
+    .remove-item {
+      background: #313131;
+      color: #E3E3E3;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      z-index: 1;
+    }
+    .remove-item:hover {
+      background: #C67C4E;
+      color: #313131;
+    }
+    input[type="checkbox"] {
+      accent-color: #C67C4E;
+      margin-right: 8px;
+      transform: scale(1.2);
+      vertical-align: middle;
+    }
+    .terms-label {
+      display: inline-block;
+      margin-left: 2px;
+      font-size: 1rem;
+      color: #313131;
+      font-weight: 500;
+      vertical-align: middle;
+    }
+    footer {
+      background: linear-gradient(90deg, #C67C4E 80%, #EDD6C8 100%);
+      color: #E3E3E3;
+      text-align: center;
+      padding: 1.2rem 0;
+      margin-top: auto;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      box-shadow: 0 -2px 16px #C67C4E22;
+    }
+    .order::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      left: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, #C67C4E55 0%, transparent 80%);
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(8px);
+    }
+    .order::after {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, #EDD6C888 0%, transparent 80%);
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(8px);
+    }
+    @media (max-width: 600px) {
+      .order {
+        padding: 24px 8px 18px 8px;
+        max-width: 98vw;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav a {
+        font-size: 1rem;
+        padding: 4px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>☕ Bro Chai 🍵</h1>
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="Menu.html">Menu</a>
+      <a href="order.html" class="active">Order</a>
+    </nav>
+  </header>
+
+  <section class="order">
+    <h2>Place Your Order</h2>
+    <form id="orderForm" autocomplete="off">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required placeholder="Enter your full name">
+
+      <div id="items">
+        <div class="item-group">
+          <button type="button" class="remove-item" style="display:none;">Remove</button>
+          <label for="drink-1">Choose Drink:</label>
+          <select id="drink-1" name="drink[]" required>
+            <option value="" disabled selected>Select your option</option>
+            <option>Tea - ₹40</option>
+            <option>Coffee - ₹50</option>
+            <option>Masala Chai - ₹30</option>
+            <option>Green Tea - ₹40</option>
+            <option>Black Coffee - ₹50</option>
+            <option>Cold Coffee - ₹80</option>
+          </select>
+          <label for="quantity-1">Quantity:</label>
+          <input type="number" id="quantity-1" name="quantity[]" min="1" value="1" required>
+        </div>
+      </div>
+      <button type="button" class="add-item" id="addItemBtn">+ Add Another Item</button>
+
+      <label for="address">Delivery Address:</label>
+      <textarea id="address" required placeholder="Enter your delivery address"></textarea>
+      <label for="pincode">Pin Code:</label>
+      <input type="text" id="pincode" required placeholder="Enter pin code">
+      <div style="margin-top:18px;">
+        <input type="checkbox" id="terms" required>
+        <label for="terms" class="terms-label">I agree to the terms and conditions</label>
+      </div>
+      <button type="submit" class="btn">Checkout</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Bro Chai Hub | Made with ❤️</p>
+  </footer>
+
+</body>
+</html>

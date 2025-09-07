@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bro Chai</title>
+  <link rel="icon" href="images/Brochai.jpg" type="image">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #EDD6C8;
+      color: #313131;
+    }
+    header {
+      background: #C67C4E;
+      color: #E3E3E3;
+      padding: 1rem 0;
+      text-align: center;
+    }
+     nav a {
+      color: #E3E3E3;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 6px 18px;
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+      background: rgba(49,49,49,0.08);
+      backdrop-filter: blur(2px);
+    }
+    nav a:hover, nav a.active {
+      background: #313131;
+      color: #EDD6C8;
+    }
+    .menu {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: #E3E3E3;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(49,49,49,0.08);
+    }
+    .menu h2 {
+      text-align: center;
+      color: #C67C4E;
+      margin-bottom: 2rem;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .item {
+      background: #EDD6C8;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(49,49,49,0.06);
+      transition: box-shadow 0.2s;
+    }
+    .item:hover {
+      box-shadow: 0 4px 16px rgba(198,124,78,0.15);
+    }
+    .item h3 {
+      margin: 0.5rem 0 1rem 0;
+      color: #C67C4E;
+    }
+    .item a img {
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      border: 2px solid #C67C4E;
+    }
+    .item a img:hover {
+      transform: scale(1.05);
+      border-color: #313131;
+    }
+    .item p {
+      font-size: 1.1rem;
+      color: #313131;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .btn {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      background: #C67C4E;
+      color: #E3E3E3;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #313131;
+      color: #EDD6C8;
+    }
+    footer {
+      background: #C67C4E;
+      color: #E3E3E3;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>☕ Bro Chai 🍵</h1>
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="Menu.html">Menu</a>
+      <a href="order.html">Order</a>
+    </nav>
+  </header>
+
+  <section class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="item">
+        <h3>Chai</h3>
+        <a href="order.html">
+          <img src="images/Chai.png" alt="Masala Chai" width="200px" height="150px">
+        </a>
+        <p>₹40</p>
+      </div>
+      <div class="item">
+        <h3>Coffee</h3>
+        <a href="order.html">
+          <img src="images/Coffee.png" alt="Black Coffee" width="200px" height="150px">
+        </a>
+        <p>₹50</p>
+      </div>
+      <div class="item">
+        <h3>Masala Chai</h3>
+        <a href="order.html">
+          <img src="images/Masala Chai.png" alt="Masala Chai" width="200px" height="150px">
+        </a>
+        <p>₹50</p>
+      </div>
+      <div class="item">
+        <h3>Green Tea</h3>
+        <a href="order.html">
+          <img src="images/Greentea.jpg" alt="Greentea" width="200px" height="150px">
+        </a>
+        <p>₹50</p>
+      </div>
+      <div class="item">
+        <h3>Black Coffee</h3>
+        <a href="order.html">
+          <img src="images/balck cofee.png" alt="BlackCoffee" width="200px" height="150px">
+        </a>
+        <p>₹60</p>
+      </div>
+      <div class="item">
+        <h3>Cold Coffee</h3>
+        <a href="order.html">
+          <img src="images/coldcoffee.png" alt="ColdCoffee" width="200px" height="150px">
+        </a>
+        <p>₹80</p>
+      </div>
+    </div>
+    <a href="order.html" class="btn">Order Now</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Bro Chai Hub | Made with ❤️</p>
+  </footer>
+</body>
+</html>
